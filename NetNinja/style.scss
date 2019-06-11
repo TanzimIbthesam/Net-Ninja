@@ -1,0 +1,93 @@
+
+@import "reset";
+@import "variables";
+@import "mixins";
+#main-nav{
+    background:$deepblue;
+    ul{
+     width:100%;
+     list-style:none;
+     @include clearFix;
+    }
+    &:after{
+        content:"";
+        display:block;
+        clear: both;
+    }
+    li{
+    //   display: inline-block;
+    float:left;
+    //  width:14%;
+    width:(100%/6);
+    @include mQ(600px){
+        width:100%;
+    }
+    }
+    a{
+        text-decoration:none;
+        color:$offwhite;
+        padding:16px;
+        display:block;
+        text-align:center;
+        &:hover{
+            // background:#333;
+            background:lighten($deepblue,5);
+        }
+        
+
+    }
+}
+
+section h1{
+    font-size: $sectionheading;
+    color:$deepblue;
+}
+.lead-banner{
+    @include banner;
+    text-align:right;
+}
+.lessons-banner{
+    @include banner;
+    li{
+        text-transform:uppercase;
+        font-size:20px;
+        max-width:500px;
+        margin:60px 0;
+        list-style:none;
+    }
+}
+#services{
+    margin-bottom:60px;
+    li{
+    float:left;
+    box-sizing: border-box;
+    text-align:center;
+    width:(100%/3);
+    }
+    img{
+    width:60%;
+    margin:20px 20%;
+    }
+    a{
+    text-decoration:none;
+    color:$deepblue;
+    font-weight:bold;
+    &:hover{
+        color:red;
+        color:complement($deepblue);
+    }
+    }
+    ul{
+        @include clearFix;
+    }
+}
+#projects li{
+     @include grid(4,2%);
+    // @include grid(2,25%);
+    float:left;
+    width:23%;
+    margin-right:2%;
+    img{
+        width:100%;
+    }
+}
